@@ -1,6 +1,7 @@
 const http = require('http');
 const url = require('url');
 const fs = require('fs');
+const nodeevents = require('./nodeevents');
 
 const timeStamp = require('./timeStamp');
 
@@ -24,6 +25,7 @@ http.createServer(function(req, res) {
 	console.log(qList.host); // localhost:3030
 	console.log(qList.pathname); // /users.html
 	console.log(qList.search); // ?id=
+	nodeevents.nodeevents();
 	//console.log(qList);
 	res.end("<p>" + resTxt + "</p>");
 	
